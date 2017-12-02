@@ -8,4 +8,5 @@ Open <b>ShareX</b>, click <b>Destinations</b>, click <b>Destination Settings</b>
  ![ShareX settings](https://i.imgur.com/Ackyu7J.png)
  
 ## Troubleshooting
-* Make sure that the folder used for uploading has at least 755 permissions. `sudo chmod 755 i`
+* Make sure that the folder used for uploading has at least 744 permissions. `sudo chmod 744 i`
+* Also make sure www-data (or equivalent) is the owner and group of the upload folder. `sudo chown www-data:www-data i`
