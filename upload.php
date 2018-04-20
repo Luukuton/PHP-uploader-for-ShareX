@@ -26,7 +26,7 @@ $foldername = $year."-".$month;
 
 if(file_exists($foldername)){echo 'Folder already exists. Uploading... ';}
 else{
-    mkdir($sharexdir.$foldername,0744);
+    mkdir($sharexdir.$foldername,0755);
 }
 
 if (isset($_POST['secret'])) {
