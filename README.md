@@ -2,7 +2,7 @@
 
 This is a custom PHP uploader made for uploading files to your server with ShareX.
 
-1. Create the upload folder in your webroot `mkdir i` and make sure that the folder used for uploading has at least 744 permissions. `sudo chmod 744 i`
+1. Create the upload folder in your webroot `mkdir i` and make sure that the folder used for uploading has at least 755 permissions. `sudo chmod 755 i`
 1. Also change the owner and group of the upload folder to www-data (or equivalent). `sudo chown www-data:www-data i`
 
 1. Place the upload.php to your webroot (eg. /var/www/example.com/upload.php) and the config.php to anywhere you like (just change the location in upload.php: `$config = include('config.php');`).
