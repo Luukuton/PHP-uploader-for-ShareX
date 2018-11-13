@@ -29,28 +29,20 @@ else{
     mkdir($sharexdir.$foldername,0755);
 }
 
-if (isset($_POST['secret'])) {
-    if ($_POST['secret'] == $key) {
-
-        $filename = $filedate."-".RandomString($lengthofstring);
-        $target_file = $_FILES["sharex"]["name"];
-        $fileType = pathinfo($target_file, PATHINFO_EXTENSION);
-
-        if (move_uploaded_file($_FILES["sharex"]["tmp_name"], $sharexdir.$foldername."/".$filename.'.'.$fileType))
-        {
-            echo $domain_url.$sharexdir.$foldername."/".$filename.'.'.$fileType;
-        }
-            else
-        {
-           echo 'File upload has failed';
-        }
-    }
-    else
+if (isset($_POST['secret']) && $_POST['secret'] == $key) {
+    $filename = $filedate."-".RandomString($lengthofstring);
+    $target_file = $_FILES["sharex"]["name"];
+    $fileType = pathinfo($target_file, PATHINFO_EXTENSION);
+    if (move_uploaded_file($_FILES["sharex"]["tmp_name"], $sharexdir.$foldername."/".$filename.'.'.$fileType))
     {
-        echo 'Secret key is invalid';
+        echo $domain_url.$sharexdir.$foldername."/".$filename.'.'.$fileType;
+    }
+        else
+    {
+       echo 'File upload has failed';
     }
 }
 else
 {
-    echo 'No post data was received';
+    echo 'Secret key was invalid or no post data was received';
 }
