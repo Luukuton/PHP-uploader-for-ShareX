@@ -7,6 +7,8 @@ A custom PHP uploader used with ShareX.
 
 3. Place the upload.php to the webroot (e.g. /var/www/example.com/upload.php) and the config.php to anywhere you like (just change the path in upload.php: `$config = include('config.php');`).
 
-4. Open <b>ShareX</b>, click <b>Destinations</b>, click <b>Destination Settings</b>, scroll down until you find <b>Custom uploaders</b> and add a new uploader with the following settings:
+4. Make sure that the max POST size is enough (e.g. in php.ini `post_max_size = 100M`)
 
- ![ShareX settings](https://i.imgur.com/Ackyu7J.png)
+5. Open <b>ShareX</b>, click <b>Destinations</b>, click <b>Destination Settings</b>, scroll down until you find <b>Custom uploaders</b> and add a new uploader with the following settings:
+
+ ![ShareX settings](sharex_settings.png)
